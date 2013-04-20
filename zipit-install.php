@@ -7,7 +7,7 @@
 ###############################################################
 
 // grab the latest version of zipit from github
-shell_exec('rm -rf zipit; wget https://github.com/jeremehancock/zipit/zipball/master --no-check-certificate -O zipit.zip; unzip zipit.zip; mv jeremehancock-zipit-* zipit; rm zipit.zip');
+shell_exec('rm -rf zipit; wget https://github.com/clarkewd/zipit/zipball/master --no-check-certificate -O zipit.zip; unzip zipit.zip; mv clarkewd-zipit-* zipit; rm zipit.zip');
 
 // determine datacenter for storage
 $string = $_SERVER["PHP_DOCUMENT_ROOT"];
@@ -26,13 +26,13 @@ $hash = substr(hash("sha512",rand()),0,12); // Reduces the size to 12 chars
 
 if (isset($_POST["Submit"])) {
 
-$string = '<?php 
+$string = '<?php
 ###############################################################
 # Zipit Backup Utility
 ###############################################################
 # Developed by Jereme Hancock for Cloud Sites
 # Visit http://zipitbackup.com for updates
-############################################################### 
+###############################################################
 
 // Zipit Backup Utility Login Credentials
 $zipituser = "'. $_POST["zipituser"]. '";
@@ -82,9 +82,9 @@ margin-bottom: 1px;
 font-family: Arial;
 }
 
-    input { 
+    input {
 
-            border: 1px solid #818185; 
+            border: 1px solid #818185;
             -moz-border-radius: 15px;
             border-radius: 15px;
             height:30px;
@@ -92,7 +92,7 @@ font-family: Arial;
             padding-left:8px;
             padding-right:8px;
 }
-            
+
 .wrapper{
 
         width:350px;
@@ -146,12 +146,12 @@ function removeSpaces(string) {
 <em>Enter a new username/password for Zipit</em>
 <p>
      Backup Utility Username:<br />
-    <input name="zipituser" type="text" id="zipituser" value="" onblur="this.value=removeSpaces(this.value);" required="required"> 
+    <input name="zipituser" type="text" id="zipituser" value="" onblur="this.value=removeSpaces(this.value);" required="required">
 </p>
 
 <p>
     Backup Utility Password:<br />
-    <input name="password" type="password" id="password" onblur="this.value=removeSpaces(this.value);" required="required"> 
+    <input name="password" type="password" id="password" onblur="this.value=removeSpaces(this.value);" required="required">
 </p>
 <br />
 <em>Enter your Cloud Files username/API Key</em>
